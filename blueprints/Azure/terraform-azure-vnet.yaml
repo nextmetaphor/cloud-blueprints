@@ -1,0 +1,10 @@
+Class: "Blueprint"
+Definitions:
+  terraform-azure-vnet:
+    Fields:
+      Name: "Terraform module for Azure VNet"
+      Description: "This creates an Azure virtual network and a number of subnets, as specified by the provided variables."
+      Link: "https://github.com/nextmetaphor/terraform-azure-vnet"
+    References: [
+      { Class: "Service", ID: "virtual-network", Relationship: "COMPOSED_OF" }
+    ]
