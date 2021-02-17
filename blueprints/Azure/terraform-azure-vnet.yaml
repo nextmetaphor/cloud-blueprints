@@ -6,5 +6,23 @@ Definitions:
       Description: "This creates an Azure virtual network and a number of subnets, as specified by the provided variables."
       Link: "https://github.com/nextmetaphor/terraform-azure-vnet"
     References: [
-      { Class: "Service", ID: "virtual-network", Relationship: "COMPOSED_OF" }
+      { Class: "Service", ID: "azure-virtual-network", Relationship: "COMPOSED_OF" }
+    ]
+
+  terraform-azure-storage-account:
+    Fields:
+      Name: "Terraform module to create an Azure storage account."
+      Description: "Terraform module to create an Azure storage account."
+      Link: "https://github.com/nextmetaphor/terraform-azure-storage-account"
+    References: [
+      { Class: "Service", ID: "azure-file-storage", Relationship: "COMPOSED_OF" }
+    ]
+
+  terraform-azure-vm:
+    Fields:
+      Name: "Terraform module to create an Azure VM."
+      Description: "Terraform module to create an Azure VM."
+      Link: "https://github.com/nextmetaphor/terraform-azure-vm"
+    References: [
+      { Class: "Service", ID: "azure-virtual-machine", Relationship: "COMPOSED_OF" }
     ]
