@@ -10,4 +10,7 @@ yaml-graph validate -s taxonomy -s blueprints
 
 # load into the graph
 yaml-graph load -s taxonomy -s blueprints
+
+# generate a report
+yaml-graph report --fields report/fields.yaml --template report/template.gohtml > report/cloud-taxonomy.html
 ```
