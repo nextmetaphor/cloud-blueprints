@@ -7,6 +7,55 @@
     <title>Provider, Service and Categories</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script type="application/javascript">
+        let blueprintServiceMap = new Map()
+
+        function addBlueprintInformation(blueprint, tenancy, serviceProvider, proceedingDiv) {
+            if (blueprintServiceMap.get(blueprint) === undefined) {
+                blueprintServiceMap.set(blueprint, {
+                    tenancies: [tenancy],
+                    serviceProviders: [serviceProvider],
+                    preceedingDivs: [proceedingDiv]
+                })
+            } else {
+                if (!blueprintServiceMap.get(blueprint).tenancies.includes(tenancy)) {
+                    blueprintServiceMap.get(blueprint).tenancies.push(tenancy)
+                }
+                if (!blueprintServiceMap.get(blueprint).serviceProviders.includes(serviceProvider)) {
+                    blueprintServiceMap.get(blueprint).serviceProviders.push(serviceProvider)
+                }
+                if (!blueprintServiceMap.get(blueprint).preceedingDivs.includes(proceedingDiv)) {
+                    blueprintServiceMap.get(blueprint).preceedingDivs.push(proceedingDiv)
+                }
+            }
+        }
+
+        function addIndicator(divID, text, cssClass) {
+            let newDiv = document.createElement("div");
+            newDiv.classList.add(cssClass)
+            newDiv.appendChild(document.createTextNode(text));
+            const currentDiv = document.getElementById(divID);
+            currentDiv.appendChild(newDiv);
+        }
+
+        function addSummaryIndicators() {
+            console.log(blueprintServiceMap)
+            blueprintServiceMap.forEach(function(blueprint,bluePrintID) {
+                let tenancies = blueprint.tenancies
+                let serviceProviders = blueprint.serviceProviders
+                let preceedingDivs = blueprint.preceedingDivs
+                preceedingDivs.forEach(function (divID, divIDIndex) {
+                    tenancies.forEach(function (tenancyID, tenancyIndex) {
+                        addIndicator(divID, tenancyID, "indicator")
+                    })
+                    serviceProviders.forEach(function (serviceProviderID, serviceProviderIndex) {
+                        addIndicator(divID, serviceProviderID, "summary-indicator")
+                    })
+                })
+            })
+        }
+    </script>
 </head>
 
 <style>
@@ -71,6 +120,25 @@
         text-align: center;
         width: fit-content;
         float: right;
+        padding: 5px;
+        justify-content: center;
+    }
+
+    .summary-indicators {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        padding-bottom: 10px;
+    }
+
+
+    .summary-indicator {
+        border: inset 1px;
+        font-weight: normal;
+        font-size: small;
+        text-align: center;
+        width: fit-content;
+        float: left;
         padding: 5px;
         justify-content: center;
     }
@@ -167,7 +235,7 @@
     }
 </style>
 
-<body>
+<body onload="addSummaryIndicators()">
 {{- range $category := . -}}
     {{- $categoryClass := $category.Class -}}
     {{- $categoryID := $category.ID -}}
@@ -235,7 +303,7 @@
                                                 {{- range $blueprint := $value -}}
                                                     {{- $blueprintClass := $blueprint.Class -}}
                                                     {{- $blueprintID := $blueprint.ID -}}
-                                                    {{- $blueprintUID := (printf "%s-%s" $blueprintClass $blueprintID)}}
+                                                    {{- $blueprintUID := (printf "%s-%s-%s" $serviceUID $blueprintClass $blueprintID)}}
                                                     {{- $blueprintName := index $blueprint.Fields "Blueprint.Name" -}}
                                                     {{- $blueprintDescription := index $blueprint.Fields "Blueprint.Description" -}}
                                                     {{- $blueprintLink := index $blueprint.Fields "Blueprint.Link" -}}
@@ -248,6 +316,9 @@
                                                             </div>
                                                             <div class="card-description">
                                                                 {{$blueprintDescription}}
+                                                            </div>
+                                                            <div class="summary-indicators" id="{{$blueprintUID}}">
+
                                                             </div>
 
                                                             {{- range $key,$value := $blueprint.CompositeSectionDefinitions -}}
@@ -263,16 +334,22 @@
                                                                         {{- $blueprintServiceTenancyName := index $blueprintService.Fields "Tenancy.Name" -}}
                                                                         {{- $blueprintServiceTenancyBackgroundColour := index $blueprintService.Fields "Tenancy.BackgroundColour" -}}
                                                                         {{- $blueprintServiceTenancyFontColour := index $blueprintService.Fields "Tenancy.FontColour" -}}
+
+                                                                        <script type="application/javascript">
+                                                                            addBlueprintInformation({{$blueprintID}}, {{$blueprintServiceTenancyName}}, {{$blueprintServiceProviderName}}, {{$blueprintUID}})
+                                                                        </script>
+
                                                                         <div class="blueprint-services">
                                                                             <div>
                                                                                 <div class="indicator"
-                                                                                     style="background: {{$tenancyBackgroundColour}}; color: {{$tenancyFontColour}}">
+                                                                                     style="background: {{$blueprintServiceTenancyBackgroundColour}}; color: {{$blueprintServiceTenancyFontColour}}">
                                                                                     <div class="definition provider">{{$blueprintServiceProviderName}}</div>
                                                                                     {{$blueprintServiceName}}
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     {{end -}}
+
                                                                 {{- end -}}
                                                             {{- end -}}
                                                         </div>
@@ -292,10 +369,5 @@
 {{end}}
 
 </body>
-
-<script>
-    mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
-</script>
-
 
 </html>
