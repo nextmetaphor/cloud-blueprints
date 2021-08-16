@@ -1,0 +1,10 @@
+Class: "Blueprint"
+Definitions:
+  terraform-azure-vm:
+    Fields:
+      Name: "Terraform module to create an Azure VM."
+      Description: "Terraform module to create an Azure VM."
+      Link: "https://github.com/nextmetaphor/terraform-azure-vm"
+    References: [
+      { Class: "Service", ID: "azure-virtual-machine", Relationship: "COMPOSED_OF" }
+    ]

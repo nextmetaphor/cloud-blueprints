@@ -1,0 +1,6 @@
+Class: "BlueprintCategory"
+Definitions:
+  application-architecture:
+    Fields:
+      Name: "Application Architecture"
+      Description: "How the application architecture spans on-premise and cloud."

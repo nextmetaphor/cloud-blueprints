@@ -1,0 +1,9 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  re-architect:
+    Fields:
+      Name: "Re-Architect"
+      Description: "Rebuild architecture in a cloud-native manner."
+    References: [
+      { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
+    ]

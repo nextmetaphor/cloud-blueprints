@@ -1,0 +1,9 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  re-purchase:
+    Fields:
+      Name: "Re-Purchase"
+      Description: "Move to a PaaS equivalent service."
+    References: [
+      { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
+    ]

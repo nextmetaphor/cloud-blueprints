@@ -1,0 +1,6 @@
+Class: "BlueprintCategory"
+Definitions:
+  migration-strategy:
+    Fields:
+      Name: "Migration Strategy"
+      Description: "Strategies for migration on-premise architectures into Cloud"

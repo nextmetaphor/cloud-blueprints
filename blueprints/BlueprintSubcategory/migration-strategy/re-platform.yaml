@@ -1,0 +1,9 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  re-platform:
+    Fields:
+      Name: "Re-Platform"
+      Description: "Migrate existing assets but utilise managed services wherever possible."
+    References: [
+      { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
+    ]

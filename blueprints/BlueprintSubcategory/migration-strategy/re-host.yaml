@@ -1,0 +1,9 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  re-host:
+    Fields:
+      Name: "Re-Host"
+      Description: "Also known as \"Lift and Shift\": move existing resources without change."
+    References: [
+      { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
+    ]

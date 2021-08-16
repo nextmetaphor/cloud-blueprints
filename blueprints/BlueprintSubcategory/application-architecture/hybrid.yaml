@@ -1,0 +1,9 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  hybrid:
+    Fields:
+      Name: "Hybrid"
+      Description: "Application architecture is hosted on a combination of public cloud and on-premise infrastructure."
+    References: [
+      { Class: "BlueprintCategory", ID: "application-architecture", Relationship: "GROUPED_BY" }
+    ]
