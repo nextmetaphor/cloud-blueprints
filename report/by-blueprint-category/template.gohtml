@@ -278,82 +278,67 @@
                         <p>{{$subcategoryDescription}}</p>
 
                         {{- range $key,$value := $subcategory.CompositeSectionDefinitions -}}
-                            {{- if eq $key "PROVIDES" -}}
-                                {{- range $service := $value -}}
-                                    {{- $serviceClass := $service.Class -}}
-                                    {{- $serviceID := $service.ID -}}
-                                    {{- $serviceUID := (printf "%s-%s" $serviceClass $serviceID)}}
-                                    {{- $serviceName := index $service.Fields "Service.Name" -}}
-                                    {{- $serviceDescription := index $service.Fields "Service.Description" -}}
-                                    {{- $serviceLink := index $service.Fields "Service.Link" -}}
-                                    {{- $providerName := index $service.Fields "Provider.Name" -}}
-                                    {{- $tenancyName := index $service.Fields "Tenancy.Name" -}}
-                                    {{- $tenancyBackgroundColour := index $service.Fields "Tenancy.BackgroundColour" -}}
-                                    {{- $tenancyFontColour := index $service.Fields "Tenancy.FontColour" -}}
+                            {{- if eq $key "DEMONSTRATES" -}}
+                                {{- range $blueprint := $value -}}
+                                    {{- $blueprintClass := $blueprint.Class -}}
+                                    {{- $blueprintID := $blueprint.ID -}}
+                                    {{- $blueprintUID := (printf "%s-%s-%s" $subcategoryUID $blueprintClass $blueprintID)}}
+                                    {{- $blueprintName := index $blueprint.Fields "Blueprint.Name" -}}
+                                    {{- $blueprintDescription := index $blueprint.Fields "Blueprint.Description" -}}
+                                    {{- $blueprintLink := index $blueprint.Fields "Blueprint.Link" -}}
 
-                                    {{- range $key,$value := $service.CompositeSectionDefinitions -}}
-                                        {{- if eq $key "COMPOSED_OF" -}}
-                                            {{- range $blueprint := $value -}}
-                                                {{- $blueprintClass := $blueprint.Class -}}
-                                                {{- $blueprintID := $blueprint.ID -}}
-                                                {{- $blueprintUID := (printf "%s-%s-%s" $serviceUID $blueprintClass $blueprintID)}}
-                                                {{- $blueprintName := index $blueprint.Fields "Blueprint.Name" -}}
-                                                {{- $blueprintDescription := index $blueprint.Fields "Blueprint.Description" -}}
-                                                {{- $blueprintLink := index $blueprint.Fields "Blueprint.Link" -}}
+                                    <div class="card">
+                                        <div class="card-contents">
+                                            <div class="card-title-bar">
+                                                <div class="card-title">{{$blueprintName}}</div>
+                                                <div class="material-icons card-link"><a href="{{$blueprintLink}}" target="_blank">link</a></div>
+                                            </div>
+                                            <div class="card-description">
+                                                {{$blueprintDescription}}
+                                            </div>
 
-                                                <div class="card">
-                                                    <div class="card-contents">
-                                                        <div class="card-title-bar">
-                                                            <div class="card-title">{{$blueprintName}}</div>
-                                                            <div class="material-icons card-link"><a href="{{$blueprintLink}}" target="_blank">link</a></div>
-                                                        </div>
-                                                        <div class="card-description">
-                                                            {{$blueprintDescription}}
-                                                        </div>
-
-                                                        <div class="card-footer">
-                                                            <div class="summary-indicators" id="{{$blueprintUID}}">
-                                                                <!-- placeholder: will be populated on page load by javascript function -->
-                                                            </div>
-                                                            <div class="blueprint-services">
-                                                                {{- range $key,$value := $blueprint.CompositeSectionDefinitions -}}
-                                                                    {{- if eq $key "COMPOSED_OF" -}}
-                                                                        {{- range $blueprintService := $value -}}
-                                                                            {{- $blueprintServiceClass := $blueprintService.Class -}}
-                                                                            {{- $blueprintServiceID := $blueprintService.ID -}}
-                                                                            {{- $blueprintServiceUID := (printf "%s-%s" $blueprintService $serviceID)}}
-                                                                            {{- $blueprintServiceName := index $blueprintService.Fields "Service.Name" -}}
-                                                                            {{- $blueprintServiceDescription := index $blueprintService.Fields "Service.Description" -}}
-                                                                            {{- $blueprintServiceLink := index $blueprintService.Fields "Service.Link" -}}
-                                                                            {{- $blueprintServiceProviderName := index $blueprintService.Fields "Provider.Name" -}}
-                                                                            {{- $blueprintServiceTenancyName := index $blueprintService.Fields "Tenancy.Name" -}}
-                                                                            {{- $blueprintServiceTenancyBackgroundColour := index $blueprintService.Fields "Tenancy.BackgroundColour" -}}
-                                                                            {{- $blueprintServiceTenancyFontColour := index $blueprintService.Fields "Tenancy.FontColour" -}}
-
-                                                                            <script type="application/javascript">
-                                                                                addBlueprintInformation({{$blueprintID}}, {{$blueprintServiceTenancyName}}, {{$blueprintServiceProviderName}}, {{$blueprintUID}})
-                                                                            </script>
-
-                                                                                <div>
-                                                                                    <div class="indicator"
-                                                                                         style="background: {{$blueprintServiceTenancyBackgroundColour}}; color: {{$blueprintServiceTenancyFontColour}}">
-                                                                                        <div class="definition provider">{{$blueprintServiceProviderName}}</div>
-                                                                                        {{$blueprintServiceName}}
-                                                                                    </div>
-                                                                                </div>
-                                                                        {{end -}}
-                                                                    {{- end -}}
-                                                                {{- end -}}
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                            <div class="card-footer">
+                                                <div class="summary-indicators" id="{{$blueprintUID}}">
+                                                    <!-- placeholder: will be populated on page load by javascript function -->
                                                 </div>
-                                            {{end -}}
-                                        {{- end -}}
-                                    {{- end -}}
+                                                <div class="blueprint-services">
+                                                    {{- range $key,$value := $blueprint.CompositeSectionDefinitions -}}
+                                                        {{- if eq $key "COMPOSED_OF" -}}
+                                                            {{- range $blueprintService := $value -}}
+                                                                {{- $blueprintServiceClass := $blueprintService.Class -}}
+                                                                {{- $blueprintServiceID := $blueprintService.ID -}}
+                                                                {{- $blueprintServiceUID := (printf "%s-%s" $blueprintService $subcategoryID)}}
+                                                                {{- $blueprintServiceName := index $blueprintService.Fields "Service.Name" -}}
+                                                                {{- $blueprintServiceDescription := index $blueprintService.Fields "Service.Description" -}}
+                                                                {{- $blueprintServiceLink := index $blueprintService.Fields "Service.Link" -}}
+                                                                {{- $blueprintServiceProviderName := index $blueprintService.Fields "Provider.Name" -}}
+                                                                {{- $blueprintServiceTenancyName := index $blueprintService.Fields "Tenancy.Name" -}}
+                                                                {{- $blueprintServiceTenancyBackgroundColour := index $blueprintService.Fields "Tenancy.BackgroundColour" -}}
+                                                                {{- $blueprintServiceTenancyFontColour := index $blueprintService.Fields "Tenancy.FontColour" -}}
+
+                                                                <script type="application/javascript">
+                                                                    addBlueprintInformation({{$blueprintID}}, {{$blueprintServiceTenancyName}}, {{$blueprintServiceProviderName}}, {{$blueprintUID}})
+                                                                </script>
+
+                                                                    <div>
+                                                                        <div class="indicator"
+                                                                             style="background: {{$blueprintServiceTenancyBackgroundColour}}; color: {{$blueprintServiceTenancyFontColour}}">
+                                                                            <div class="definition provider">{{$blueprintServiceProviderName}}</div>
+                                                                            {{$blueprintServiceName}}
+                                                                        </div>
+                                                                    </div>
+                                                            {{end -}}
+                                                        {{- end -}}
+                                                    {{- end -}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 {{end -}}
                             {{- end -}}
                         {{- end -}}
+
+
                     </div>
                 {{end -}}
             {{- end -}}

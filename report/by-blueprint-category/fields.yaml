@@ -5,9 +5,9 @@ SectionClass:
 CompositeSections:
   - SectionClass:
       Class: BlueprintSubcategory
-      Fields: [ Name, Description ]
+      Fields: [ Order, Name, Description ]
       Relationship: GROUPED_BY
-      OrderFields: [ Name ]
+      OrderFields: [ Order, Name ]
     CompositeSections:
     - SectionClass:
         Class: Blueprint

@@ -2,6 +2,7 @@ Class: "BlueprintSubcategory"
 Definitions:
   on-premise:
     Fields:
+      Order: 01
       Name: "On-Premise"
       Description: "Application architecture is solely hosted on on-premise infrastructure."
     References: [

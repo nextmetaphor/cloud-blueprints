@@ -2,6 +2,7 @@ Class: "BlueprintSubcategory"
 Definitions:
   re-architect:
     Fields:
+      Order: 03
       Name: "Re-Architect"
       Description: "Rebuild architecture in a cloud-native manner."
     References: [

@@ -1,0 +1,6 @@
+Class: "BlueprintCategory"
+Definitions:
+  size:
+    Fields:
+      Name: "Blueprint Size"
+      Description: "The size of the blueprint: micro, module or macro."

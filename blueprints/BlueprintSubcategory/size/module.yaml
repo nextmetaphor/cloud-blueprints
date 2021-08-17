@@ -1,0 +1,10 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  module:
+    Fields:
+      Order: 02
+      Name: "Module"
+      Description: "Module blueprints generally demonstrate how to put together a reusable grouping of services"
+    References: [
+      { Class: "BlueprintCategory", ID: "size", Relationship: "GROUPED_BY" }
+    ]

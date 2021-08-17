@@ -2,6 +2,7 @@ Class: "BlueprintSubcategory"
 Definitions:
   hybrid:
     Fields:
+      Order: 02
       Name: "Hybrid"
       Description: "Application architecture is hosted on a combination of public cloud and on-premise infrastructure."
     References: [

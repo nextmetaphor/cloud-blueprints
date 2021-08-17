@@ -2,6 +2,7 @@ Class: "BlueprintSubcategory"
 Definitions:
   public-cloud:
     Fields:
+      Order: 03
       Name: "Public Cloud"
       Description: "Application architecture is solely hosted on public cloud."
     References: [
