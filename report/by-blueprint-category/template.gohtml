@@ -288,6 +288,7 @@
                                     {{- $blueprintUID := (printf "%s-%s-%s" $subcategoryUID $blueprintClass $blueprintID)}}
                                     {{- $blueprintName := index $blueprint.Fields "Blueprint.Name" -}}
                                     {{- $blueprintDescription := index $blueprint.Fields "Blueprint.Description" -}}
+                                    {{- $blueprintImage := index $blueprint.Fields "Blueprint.ImageSrc" -}}
                                     {{- $blueprintLink := index $blueprint.Fields "Blueprint.Link" -}}
 
                                     <div class="card">
@@ -297,6 +298,9 @@
                                                 <div class="material-icons card-link"><a href="{{$blueprintLink}}" target="_blank">link</a></div>
                                             </div>
                                             <div class="card-description">
+                                                <div>
+                                                    <img src="data:image/{{$blueprintImage}}" width="100%">
+                                                </div>
                                                 {{$blueprintDescription}}
                                             </div>
 
