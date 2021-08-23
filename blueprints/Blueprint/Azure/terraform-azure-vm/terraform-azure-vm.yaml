@@ -5,6 +5,10 @@ Definitions:
       Name: "Terraform module to create an Azure VM."
       Description: "Terraform module to create an Azure VM."
       Link: "https://github.com/nextmetaphor/terraform-azure-vm"
+
+    FileFields:
+      ImageSrc: { Prefix: "base64,", Path: "terraform-azure-vm.jpg" }
+
     References: [
       { Class: "Service", ID: "azure-virtual-machine", Relationship: "COMPOSED_OF" },
       { Class: "BlueprintSubcategory", ID: "micro", Relationship: "DEMONSTRATES" },

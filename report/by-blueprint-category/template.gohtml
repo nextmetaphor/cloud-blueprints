@@ -246,6 +246,11 @@
         flex-direction: row-reverse;
         padding-bottom: 10px;
     }
+
+    .blueprint-image {
+        max-height: 100%;
+        max-width: 100%;
+    }
 </style>
 
 <body onload="addSummaryIndicators()">
@@ -299,7 +304,7 @@
                                             </div>
                                             <div class="card-description">
                                                 <div>
-                                                    <img src="data:image;{{$blueprintImage}}" width="100%">
+                                                    <img class="blueprint-image" src="data:image;{{$blueprintImage}}">
                                                 </div>
                                                 {{$blueprintDescription}}
                                             </div>

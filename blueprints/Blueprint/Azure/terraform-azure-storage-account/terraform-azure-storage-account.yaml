@@ -5,6 +5,10 @@ Definitions:
       Name: "Terraform module to create an Azure storage account."
       Description: "Terraform module to create an Azure storage account."
       Link: "https://github.com/nextmetaphor/terraform-azure-storage-account"
+
+    FileFields:
+      ImageSrc: { Prefix: "base64,", Path: "terraform-azure-storage-account.jpg" }
+
     References: [
       { Class: "Service", ID: "azure-file-storage", Relationship: "COMPOSED_OF" },
       { Class: "BlueprintSubcategory", ID: "micro", Relationship: "DEMONSTRATES" },
