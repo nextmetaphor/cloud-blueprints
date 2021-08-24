@@ -60,8 +60,8 @@
 <style>
     body {
         margin: auto;
-        width: 1660px;
-        padding-top: 80px;
+        width: 98%;
+        padding-top: 10px;
         font-family: "RobotoDraft", "Roboto", "Helvetica", sans-serif;
         -webkit-font-smoothing: antialiased;
     }
@@ -262,10 +262,12 @@
     {{- $categoryDescription := index $category.Fields "BlueprintCategory.Description"}}
 
     <input type="checkbox" id="{{$categoryUID}}"/>
-    <label for="{{$categoryUID}}">{{$categoryName}}</label>
+    <label for="{{$categoryUID}}">
+        <div style="font-weight: bolder">{{$categoryName}}</div>
+        <div style="margin-top: 3px; font-size: medium; color: gray">{{$categoryDescription}}</div>
+    </label>
 
     <div class="content">
-        <p>{{$categoryDescription}}</p>
         {{- range $key,$value := $category.CompositeSectionDefinitions -}}
             {{- if eq $key "GROUPED_BY" -}}
                 {{- range $subcategory := $value -}}
@@ -277,14 +279,12 @@
                     <input type="checkbox" id="{{$subcategoryUID}}"/>
                     <label for="{{$subcategoryUID}}" class="level1">
                         <div>
-                            <div class="definition">{{$categoryName}} Category</div>
-                            <span>{{$subcategoryName}}</span>
+                            <div>{{$subcategoryName}}</div>
+                            <div style="font-size: smaller; color: gray">{{$subcategoryDescription}}</div>
                         </div>
                     </label>
 
                     <div class="content">
-                        <p>{{$subcategoryDescription}}</p>
-
                         {{- range $key,$value := $subcategory.CompositeSectionDefinitions -}}
                             {{- if eq $key "DEMONSTRATES" -}}
                                 {{- range $blueprint := $value -}}
