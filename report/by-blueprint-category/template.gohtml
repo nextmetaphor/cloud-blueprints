@@ -258,8 +258,8 @@
     {{- $categoryClass := $category.Class -}}
     {{- $categoryID := $category.ID -}}
     {{- $categoryUID := (print $categoryClass "-" $categoryID)}}
-    {{- $categoryName := index $category.Fields "BlueprintCategory.Name"}}
-    {{- $categoryDescription := index $category.Fields "BlueprintCategory.Description"}}
+    {{- $categoryName := index $category.Fields "BlueprintCapability.Name"}}
+    {{- $categoryDescription := index $category.Fields "BlueprintCapability.Description"}}
 
     <input type="checkbox" id="{{$categoryUID}}"/>
     <label for="{{$categoryUID}}">
@@ -274,8 +274,8 @@
                     {{- $subcategoryClass := $subcategory.Class -}}
                     {{- $subcategoryID := $subcategory.ID -}}
                     {{- $subcategoryUID := (printf "%s-%s" $subcategoryClass $subcategoryID)}}
-                    {{- $subcategoryName := index $subcategory.Fields "BlueprintSubcategory.Name" -}}
-                    {{- $subcategoryDescription := index $subcategory.Fields "BlueprintSubcategory.Description" -}}
+                    {{- $subcategoryName := index $subcategory.Fields "BlueprintCategory.Name" -}}
+                    {{- $subcategoryDescription := index $subcategory.Fields "BlueprintCategory.Description" -}}
                     <input type="checkbox" id="{{$subcategoryUID}}"/>
                     <label for="{{$subcategoryUID}}" class="level1">
                         <div>
@@ -323,10 +323,11 @@
                                                                 {{- $blueprintServiceName := index $blueprintService.Fields "Service.Name" -}}
                                                                 {{- $blueprintServiceDescription := index $blueprintService.Fields "Service.Description" -}}
                                                                 {{- $blueprintServiceLink := index $blueprintService.Fields "Service.Link" -}}
-                                                                {{- $blueprintServiceProviderName := index $blueprintService.Fields "Provider.Name" -}}
-                                                                {{- $blueprintServiceTenancyName := index $blueprintService.Fields "Tenancy.Name" -}}
-                                                                {{- $blueprintServiceTenancyBackgroundColour := index $blueprintService.Fields "Tenancy.BackgroundColour" -}}
-                                                                {{- $blueprintServiceTenancyFontColour := index $blueprintService.Fields "Tenancy.FontColour" -}}
+                                                                {{- $blueprintServiceImgSrc := index $blueprintService.Fields "Service.ImgSrc" -}}
+                                                                {{- $blueprintServiceProviderName := index $blueprintService.Fields "ServiceProvider.Name" -}}
+                                                                {{- $blueprintServiceTenancyName := index $blueprintService.Fields "ServiceTenancy.Name" -}}
+                                                                {{- $blueprintServiceTenancyBackgroundColour := index $blueprintService.Fields "ServiceTenancy.BackgroundColour" -}}
+                                                                {{- $blueprintServiceTenancyFontColour := index $blueprintService.Fields "ServiceTenancy.FontColour" -}}
 
                                                                 <script type="application/javascript">
                                                                     addBlueprintInformation({{$blueprintID}}, {{$blueprintServiceTenancyName}}, {{$blueprintServiceProviderName}}, {{$blueprintUID}})
@@ -337,6 +338,7 @@
                                                                              style="background: {{$blueprintServiceTenancyBackgroundColour}}; color: {{$blueprintServiceTenancyFontColour}}">
                                                                             <div class="definition provider">{{$blueprintServiceProviderName}}</div>
                                                                             {{$blueprintServiceName}}
+                                                                            <img height="25" width="25" src="data:image;{{$blueprintServiceImgSrc}}">
                                                                         </div>
                                                                     </div>
                                                             {{end -}}

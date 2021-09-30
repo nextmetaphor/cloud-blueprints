@@ -1,0 +1,7 @@
+Class: "BlueprintType"
+Definitions:
+  macro:
+    Fields:
+      Order: 03
+      Name: "Macro"
+      Description: "Macro blueprints generally demonstrate how 'the big picture'"

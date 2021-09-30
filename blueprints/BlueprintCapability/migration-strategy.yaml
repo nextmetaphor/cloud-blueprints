@@ -1,4 +1,4 @@
-Class: "BlueprintCategory"
+Class: "BlueprintCapability"
 Definitions:
   migration-strategy:
     Fields:

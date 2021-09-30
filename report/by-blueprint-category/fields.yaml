@@ -1,10 +1,10 @@
 SectionClass:
-  Class: BlueprintCategory
+  Class: BlueprintCapability
   Fields: [ Name, Description ]
   OrderFields: [ Name ]
 CompositeSections:
   - SectionClass:
-      Class: BlueprintSubcategory
+      Class: BlueprintCategory
       Fields: [ Order, Name, Description ]
       Relationship: GROUPED_BY
       OrderFields: [ Order, Name ]
@@ -17,15 +17,15 @@ CompositeSections:
       CompositeSections:
         - SectionClass:
             Class: Service
-            Fields: [ Name, Description, Link ]
+            Fields: [ Name, Description, Link , ImgSrc]
             Relationship: COMPOSED_OF
             OrderFields: [ Name ]
           AggregateClasses:
-            - Class: Provider
+            - Class: ServiceProvider
               Fields: [ Name, Description ]
               Relationship: PROVIDED_BY
               OrderFields: [ Name ]
-            - Class: Tenancy
+            - Class: ServiceTenancy
               Fields: [ Name, Description, BackgroundColour, FontColour ]
               Relationship: HAS_TENANCY
               OrderFields: [ Name ]

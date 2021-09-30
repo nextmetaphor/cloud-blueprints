@@ -11,5 +11,5 @@ Definitions:
 
     References: [
       { Class: "Service", ID: "azure-file-storage", Relationship: "COMPOSED_OF" },
-      { Class: "BlueprintSubcategory", ID: "micro", Relationship: "DEMONSTRATES" },
+      { Class: "BlueprintType", ID: "micro", Relationship: "TYPE_IS" },
     ]
