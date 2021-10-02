@@ -1,0 +1,10 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  micro:
+    Fields:
+      Order: 01
+      Name: "Micro"
+      Description: "Micro blueprints generally demonstrate how to use a single service"
+    References: [
+      { Class: "BlueprintCategory", ID: "size", Relationship: "GROUPED_BY" }
+    ]

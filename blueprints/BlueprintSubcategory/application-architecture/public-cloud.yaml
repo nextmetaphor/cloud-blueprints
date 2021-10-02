@@ -1,4 +1,4 @@
-Class: "BlueprintCategory"
+Class: "BlueprintSubcategory"
 Definitions:
   public-cloud:
     Fields:
@@ -6,5 +6,5 @@ Definitions:
       Name: "Public Cloud"
       Description: "Application architecture is solely hosted on public cloud."
     References: [
-      { Class: "BlueprintCapability", ID: "application-architecture", Relationship: "GROUPED_BY" }
+      { Class: "BlueprintCategory", ID: "application-architecture", Relationship: "GROUPED_BY" }
     ]

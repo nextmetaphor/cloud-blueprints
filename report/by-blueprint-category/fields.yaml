@@ -1,10 +1,10 @@
 SectionClass:
-  Class: BlueprintCapability
+  Class: BlueprintCategory
   Fields: [ Name, Description ]
   OrderFields: [ Name ]
 CompositeSections:
   - SectionClass:
-      Class: BlueprintCategory
+      Class: BlueprintSubcategory
       Fields: [ Order, Name, Description ]
       Relationship: GROUPED_BY
       OrderFields: [ Order, Name ]
@@ -12,7 +12,7 @@ CompositeSections:
     - SectionClass:
         Class: Blueprint
         Fields: [ Name, Description, ImageSrc, Link ]
-        Relationship: DEMONSTRATES
+        Relationship: BELONGS_TO
         OrderFields: [ Name ]
       CompositeSections:
         - SectionClass:

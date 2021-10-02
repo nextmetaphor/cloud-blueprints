@@ -1,4 +1,4 @@
-Class: "BlueprintCategory"
+Class: "BlueprintSubcategory"
 Definitions:
   re-architect:
     Fields:
@@ -6,5 +6,5 @@ Definitions:
       Name: "Re-Architect"
       Description: "Rebuild architecture in a cloud-native manner."
     References: [
-      { Class: "BlueprintCapability", ID: "migration-strategy", Relationship: "GROUPED_BY" }
+      { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
     ]

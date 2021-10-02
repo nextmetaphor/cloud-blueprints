@@ -11,5 +11,5 @@ Definitions:
 
     References: [
       { Class: "Service", ID: "azure-virtual-network", Relationship: "COMPOSED_OF" },
-      { Class: "BlueprintType", ID: "micro", Relationship: "TYPE_IS" },
+      { Class: "BlueprintSubcategory", ID: "micro", Relationship: "BELONGS_TO" },
     ]

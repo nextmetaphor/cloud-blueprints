@@ -258,8 +258,8 @@
     {{- $categoryClass := $category.Class -}}
     {{- $categoryID := $category.ID -}}
     {{- $categoryUID := (print $categoryClass "-" $categoryID)}}
-    {{- $categoryName := index $category.Fields "BlueprintCapability.Name"}}
-    {{- $categoryDescription := index $category.Fields "BlueprintCapability.Description"}}
+    {{- $categoryName := index $category.Fields "BlueprintCategory.Name"}}
+    {{- $categoryDescription := index $category.Fields "BlueprintCategory.Description"}}
 
     <input type="checkbox" id="{{$categoryUID}}"/>
     <label for="{{$categoryUID}}">
@@ -274,8 +274,8 @@
                     {{- $subcategoryClass := $subcategory.Class -}}
                     {{- $subcategoryID := $subcategory.ID -}}
                     {{- $subcategoryUID := (printf "%s-%s" $subcategoryClass $subcategoryID)}}
-                    {{- $subcategoryName := index $subcategory.Fields "BlueprintCategory.Name" -}}
-                    {{- $subcategoryDescription := index $subcategory.Fields "BlueprintCategory.Description" -}}
+                    {{- $subcategoryName := index $subcategory.Fields "BlueprintSubcategory.Name" -}}
+                    {{- $subcategoryDescription := index $subcategory.Fields "BlueprintSubcategory.Description" -}}
                     <input type="checkbox" id="{{$subcategoryUID}}"/>
                     <label for="{{$subcategoryUID}}" class="level1">
                         <div>
@@ -286,7 +286,7 @@
 
                     <div class="content">
                         {{- range $key,$value := $subcategory.CompositeSectionDefinitions -}}
-                            {{- if eq $key "DEMONSTRATES" -}}
+                            {{- if eq $key "BELONGS_TO" -}}
                                 {{- range $blueprint := $value -}}
                                     {{- $blueprintClass := $blueprint.Class -}}
                                     {{- $blueprintID := $blueprint.ID -}}
