@@ -7,7 +7,7 @@ Definitions:
       Link: "https://github.com/nextmetaphor/terraform-azure-vnet"
 
     FileFields:
-      ImageSrc: { Prefix: "base64,", Path: "terraform-azure-vnet.jpg" }
+      ImageSrc: { Prefix: "base64,", Path: "terraform-azure-vnet.jpg", Encoding: "base64" }
 
     References: [
       { Class: "Service", ID: "azure-virtual-network", Relationship: "COMPOSED_OF" },
