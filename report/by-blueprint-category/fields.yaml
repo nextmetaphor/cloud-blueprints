@@ -27,5 +27,5 @@ CompositeSections:
               OrderFields: [ Name ]
             - Class: ServiceTenancy
               Fields: [ Name, Description, BackgroundColour, FontColour ]
-              Relationship: HAS_TENANCY
+              Relationship: HAS_TENANCY_OF
               OrderFields: [ Name ]
