@@ -4,7 +4,7 @@ variables:
 pages:
   stage: deploy
   script:
-    - sleep 10
+    - sleep 20
     - yaml-graph validate -s cloud-taxonomy/taxonomy -s blueprints -f cloud-taxonomy/taxonomy/definition-format.yml
     - yaml-graph load -s cloud-taxonomy/taxonomy -s blueprints
     - yaml-graph report --fields report/by-blueprint-category/fields.yaml --template report/by-blueprint-category/template.gohtml > report/by-blueprint-category/by-blueprint-category.html
