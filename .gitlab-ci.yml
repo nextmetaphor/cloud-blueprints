@@ -1,0 +1,15 @@
+image: nextmetaphor/yaml-graph:latest
+
+pages:
+  stage: deploy
+  script:
+    - yaml-graph validate -s taxonomy -s blueprints -f taxonomy/definition-format.yml
+    - yaml-graph load -s taxonomy -s blueprints
+    - yaml-graph report --fields report/by-blueprint-category/fields.yaml --template report/by-blueprint-category/template.gohtml > report/by-blueprint-category/by-blueprint-category.html
+    - cp report/by-blueprint-category/by-blueprint-category.html public/index.html
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 day
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
