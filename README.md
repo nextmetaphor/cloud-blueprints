@@ -3,6 +3,8 @@ Cloud Computing Blueprints
 
 ![Cloud Blueprints](cloud-blueprints.jpg)
 
+Latest version can be found at [https://nextmetaphor.gitlab.io/cloud-blueprints/](https://nextmetaphor.gitlab.io/cloud-blueprints/)
+
 ```bash
 # create a yaml-graph container mounting the report and definition directories
 docker run -it -p7474:7474 -p7687:7687 -v $(PWD)/cloud-taxonomy/taxonomy:/home/ymlgraph/taxonomy -v $(PWD)/blueprints:/home/ymlgraph/blueprints -v $(PWD)/report:/home/ymlgraph/report nextmetaphor/yaml-graph
