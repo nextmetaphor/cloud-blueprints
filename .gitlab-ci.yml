@@ -3,6 +3,9 @@ image: nextmetaphor/yaml-graph:latest
 pages:
   stage: deploy
   script:
+    - pwd
+    - ls -la
+    - find .
     - yaml-graph validate -s taxonomy -s blueprints -f taxonomy/definition-format.yml
     - yaml-graph load -s taxonomy -s blueprints
     - yaml-graph report --fields report/by-blueprint-category/fields.yaml --template report/by-blueprint-category/template.gohtml > report/by-blueprint-category/by-blueprint-category.html
