@@ -10,6 +10,8 @@ Definitions:
       ImageSrc: { Prefix: "base64,", Path: "terraform-azure-storage-account.jpg", Encoding: "base64" }
 
     References: [
-      { Class: "Service", ID: "azure-file-storage", Relationship: "COMPOSED_OF" },
+      { Class: "ServiceConfiguration", ID: "azure-file-storage-nfs", Relationship: "COMPOSED_OF" },
       { Class: "BlueprintSubcategory", ID: "micro", Relationship: "BELONGS_TO" },
+      { Class: "BlueprintType", ID: "reference-architecture", Relationship: "TYPE_OF" },
+      { Class: "BlueprintType", ID: "implementation", Relationship: "TYPE_OF" },
     ]

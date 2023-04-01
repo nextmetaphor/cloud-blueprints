@@ -1,0 +1,32 @@
+SectionClass:
+  Class: BlueprintCategory
+  Fields: [ ID, Name, Description ]
+  OrderFields: [ Name ]
+CompositeSections:
+  - SectionClass:
+      Class: BlueprintSubcategory
+      Fields: [ ID, Name, Description, Order ]
+      Relationship: GROUPED_BY
+      OrderFields: [ Order, Name ]
+    CompositeSections:
+      - SectionClass:
+          Class: Blueprint
+          Fields: [ Name, Description, Link ]
+          Relationship: BELONGS_TO
+          OrderFields: [ Name ]
+        CompositeSections:
+          - SectionClass:
+              Class: ServiceConfiguration
+              Fields: [ Name, Description, Link, ImgSrc ]
+              Relationship: COMPOSED_OF
+              OrderFields: [ Name ]
+            AggregateClasses:
+              - Class: Service
+                Fields: [ Name, Description, Link, ImgSrc ]
+                Relationship: CONFIGURED_IN
+                OrderFields: [ Name ]
+          - SectionClass:
+              Class: BlueprintType
+              Fields: [ ID, Name, Description, Order ]
+              Relationship: TYPE_OF
+              OrderFields: [ Order, Name ]

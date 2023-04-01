@@ -1,0 +1,35 @@
+Class:
+  CloudArchitecturalAttribute:
+    MandatoryFields:
+      Name:
+      Tag:
+      Description:
+    OptionalFields:
+
+  BlueprintType:
+    MandatoryFields:
+      Name:
+      Description:
+      Order:
+    OptionalFields:
+
+  Blueprint:
+    MandatoryFields:
+      Name:
+      Description:
+      Link:
+    OptionalFields:
+      ImageSrc:
+
+  BlueprintCategory:
+    MandatoryFields:
+      Name:
+      Description:
+    OptionalFields:
+
+  BlueprintSubcategory:
+    MandatoryFields:
+      Name:
+      Description:
+    OptionalFields:
+      Order:

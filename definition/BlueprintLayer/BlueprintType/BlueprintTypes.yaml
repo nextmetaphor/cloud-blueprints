@@ -1,0 +1,25 @@
+Class: "BlueprintType"
+Definitions:
+  reference-architecture:
+    Fields:
+      Name: "Reference Architecture"
+      Description: "Reference Architecture"
+      Order: "01"
+
+  implementation:
+    Fields:
+      Name: "Implementation"
+      Description: "Implementation"
+      Order: "02"
+
+  whitepaper:
+    Fields:
+      Name: "White Paper"
+      Description: "White Paper"
+      Order: "03"
+
+  workshop:
+    Fields:
+      Name: "Workshop"
+      Description: "Workshop"
+      Order: "04"

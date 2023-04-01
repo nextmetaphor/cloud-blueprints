@@ -4,7 +4,7 @@ Definitions:
     Fields:
       Order: 03
       Name: "Macro"
-      Description: "Macro blueprints generally demonstrate how 'the big picture'"
+      Description: "Macro blueprints generally demonstrate how \"the big picture\""
     References: [
       { Class: "BlueprintCategory", ID: "size", Relationship: "GROUPED_BY" }
     ]

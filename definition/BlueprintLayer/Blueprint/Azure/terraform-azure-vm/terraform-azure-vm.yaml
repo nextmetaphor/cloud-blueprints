@@ -10,6 +10,8 @@ Definitions:
       ImageSrc: { Prefix: "base64,", Path: "terraform-azure-vm.jpg", Encoding: "base64" }
 
     References: [
-      { Class: "Service", ID: "azure-virtual-machine", Relationship: "COMPOSED_OF" },
+      { Class: "ServiceConfiguration", ID: "azure-virtual-machine-shared-host", Relationship: "COMPOSED_OF" },
       { Class: "BlueprintSubcategory", ID: "micro", Relationship: "BELONGS_TO" },
+      { Class: "BlueprintType", ID: "reference-architecture", Relationship: "TYPE_OF" },
+      { Class: "BlueprintType", ID: "implementation", Relationship: "TYPE_OF" },
     ]
