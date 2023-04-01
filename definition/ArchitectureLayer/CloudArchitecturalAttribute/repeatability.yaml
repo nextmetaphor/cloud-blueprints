@@ -1,7 +1,7 @@
-Class: "ArchitecturalAttribute"
+Class: "CloudArchitecturalAttribute"
 Definitions:
   repeatability:
     Fields:
       Name: "repeatability"
       Tag: "...automate everything as code"
-      Description: "automate everything using the provided API interface"
+      Description: "automate everything using the provided API interfaces"

@@ -1,4 +1,4 @@
-Class: "ArchitecturalAttribute"
+Class: "CloudArchitecturalAttribute"
 Definitions:
   security:
     Fields:

@@ -7,7 +7,7 @@ Latest version can be found at [https://nextmetaphor.gitlab.io/cloud-blueprints/
 
 ```bash
 # create a yaml-graph container mounting the report and definition directories
-docker run -it -p7474:7474 -p7687:7687 -v $(PWD)/cloud-taxonomy/taxonomy:/home/ymlgraph/taxonomy -v $(PWD)/blueprints:/home/ymlgraph/blueprints -v $(PWD)/report:/home/ymlgraph/report nextmetaphor/yaml-graph
+docker run -it -p7474:7474 -p7687:7687 -v $(PWD)/cloud-taxonomy/definition:/home/ymlgraph/taxonomy -v $(PWD)/definition:/home/ymlgraph/blueprints -v $(PWD)/report:/home/ymlgraph/report nextmetaphor/yaml-graph
 
 # validate the definitions
 yaml-graph validate -s taxonomy -s blueprints -f taxonomy/definition-format.yml 
