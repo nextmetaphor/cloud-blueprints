@@ -11,7 +11,7 @@ CompositeSections:
     CompositeSections:
       - SectionClass:
           Class: Blueprint
-          Fields: [ Name, Description, Link ]
+          Fields: [ Name, Description, Link, ImgSrc ]
           Relationship: BELONGS_TO
           OrderFields: [ Name ]
         CompositeSections:

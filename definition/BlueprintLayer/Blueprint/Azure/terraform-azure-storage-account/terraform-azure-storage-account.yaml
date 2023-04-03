@@ -7,7 +7,7 @@ Definitions:
       Link: "https://github.com/nextmetaphor/terraform-azure-storage-account"
 
     FileFields:
-      ImageSrc: { Prefix: "base64,", Path: "terraform-azure-storage-account.jpg", Encoding: "base64" }
+      ImgSrc: { Prefix: "base64,", Path: "terraform-azure-storage-account.jpg", Encoding: "base64" }
 
     References: [
       { Class: "ServiceConfiguration", ID: "azure-file-storage-nfs", Relationship: "COMPOSED_OF" },

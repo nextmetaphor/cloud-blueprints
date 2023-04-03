@@ -7,7 +7,7 @@ Definitions:
       Link: "https://github.com/nextmetaphor/terraform-azure-vm"
 
     FileFields:
-      ImageSrc: { Prefix: "base64,", Path: "terraform-azure-vm.jpg", Encoding: "base64" }
+      ImgSrc: { Prefix: "base64,", Path: "terraform-azure-vm.jpg", Encoding: "base64" }
 
     References: [
       { Class: "ServiceConfiguration", ID: "azure-virtual-machine-shared-host", Relationship: "COMPOSED_OF" },

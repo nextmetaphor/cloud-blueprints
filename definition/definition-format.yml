@@ -18,8 +18,8 @@ Class:
       Name:
       Description:
       Link:
+      ImgSrc:
     OptionalFields:
-      ImageSrc:
 
   BlueprintCategory:
     MandatoryFields:
