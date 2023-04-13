@@ -1,0 +1,12 @@
+Class: "Blueprint"
+Definitions:
+  aws-application-monitoring-with-cloudwatch:
+    Fields:
+      Name: "Application Monitoring with Amazon CloudWatch"
+      Description: "This AWS Solution automates the process of setting up Amazon CloudWatch dashboards for your Apache, NGINX, and Puma workloads running on Amazon EC2. This solution uses several features of Amazon CloudWatch and speeds up the getting started experience."
+      Link: "https://aws.amazon.com/solutions/implementations/application-monitoring-with-cloudwatch/"
+      ImgSrc: "https://d1.awsstatic.com/Solutions/Solutions%20Category%20Template%20Draft/Solution%20Architecture%20Diagrams/amazon-cloudwatch-monitoring-framework-architecture-diagram.b98e23c3c266e5a98bfdeb664c35a6cf715d7d91.png"
+    References: [
+      { Class: "ServiceConfiguration", ID: "aws-lambda-default", Relationship: "COMPOSED_OF" },
+      { Class: "BestPractice", ID: "OPS04-BP01", Relationship: "ADHERES_TO"}
+    ]

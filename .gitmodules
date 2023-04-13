@@ -1,3 +1,6 @@
 [submodule "cloud-taxonomy"]
 	path = cloud-taxonomy
 	url = https://github.com/nextmetaphor/cloud-taxonomy
+[submodule "cloud-architecture-frameworks"]
+	path = cloud-architecture-frameworks
+	url = https://github.com/nextmetaphor/cloud-architecture-frameworks.git
