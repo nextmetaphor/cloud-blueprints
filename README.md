@@ -22,4 +22,7 @@ yaml-graph report --fields report/by-blueprint-category/fields.yaml --template r
 
 # blueprint by category (JSON)
 yaml-graph report --fields report/BlueprintByCategoryJSON/fields.yaml --template report/BlueprintByCategoryJSON/template.gohtml > report/BlueprintByCategoryJSON/document.json
+
+# blueprint by framework (JSON)
+yaml-graph report --fields report/BlueprintByFrameworkJSON/fields.yaml --template report/BlueprintByFrameworkJSON/template.gohtml > report/BlueprintByFrameworkJSON/document.json
 ```

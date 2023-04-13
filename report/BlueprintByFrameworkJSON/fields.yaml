@@ -43,3 +43,8 @@ CompositeSections:
                             Fields: [ "Name", "Description", "Link", "ImgSrc" ]
                             Relationship: "CONFIGURED_IN"
                             OrderFields: [ "Name" ]
+                      - SectionClass:
+                          Class: "BlueprintType"
+                          Fields: [ "ID", "Name", "Description", "Order" ]
+                          Relationship: "TYPE_OF"
+                          OrderFields: [ "Order", "Name" ]

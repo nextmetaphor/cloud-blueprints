@@ -77,6 +77,105 @@
                                                     "link": "{{ index $bestPractice.Fields "BestPractice.Link" | js}}",
                                                     "blueprints": [
 
+                                                    {{- range $key,$value := $bestPractice.CompositeSectionDefinitions -}}
+                                                        {{- if eq $key "ADHERES_TO" -}}
+                                                            {{- $firstBlueprint := true -}}
+                                                            {{- range $blueprint := $value -}}
+                                                                {{- if $firstBlueprint -}}
+                                                                    {{- $firstBlueprint = false -}}
+                                                                    {
+                                                                {{- else -}}
+                                                                    ,{
+                                                                {{- end }}
+
+                                                                "ID": "{{$blueprint.ID | js}}",
+                                                                "name": "{{ index $blueprint.Fields "Blueprint.Name" | js}}",
+                                                                "description": "{{ index $blueprint.Fields "Blueprint.Description" | js}}",
+                                                                "link": "{{ index $blueprint.Fields "Blueprint.Link" | js}}",
+                                                                "imgSrc": "{{ index $blueprint.Fields "Blueprint.ImgSrc" | js}}",
+                                                                "blueprintTypes": [
+
+                                                                {{- range $key,$value := $blueprint.CompositeSectionDefinitions -}}
+                                                                    {{- if eq $key "TYPE_OF" -}}
+                                                                        {{- $firstType := true -}}
+                                                                        {{- range $blueprintType := $value -}}
+                                                                            {{- if $firstType -}}
+                                                                                {{- $firstType = false -}}
+                                                                                {
+                                                                            {{- else -}}
+                                                                                ,{
+                                                                            {{- end }}
+
+                                                                            {{- $blueprintTypeName := index $blueprintType.Fields "BlueprintType.Name" -}}
+                                                                            "name": "{{ $blueprintTypeName | js}}",
+
+                                                                            {{- $blueprintTypeDescription := index $blueprintType.Fields "BlueprintType.Description" -}}
+                                                                            "description": "{{ $blueprintTypeDescription | js }}",
+                                                                            "ID": "{{$blueprintType.ID | js}}"
+                                                                            }
+                                                                        {{- end }}
+                                                                    {{- end }}
+                                                                {{- end }}
+
+
+                                                                ],
+
+                                                                "serviceConfigurations": [
+                                                                {{- range $key,$value := $blueprint.CompositeSectionDefinitions -}}
+                                                                    {{- if eq $key "COMPOSED_OF" -}}
+                                                                        {{- $firstConfiguration := true -}}
+                                                                        {{- range $configuration := $value -}}
+                                                                            {{- if $firstConfiguration -}}
+                                                                                {{- $firstConfiguration = false -}}
+                                                                                {
+                                                                            {{- else -}}
+                                                                                ,{
+                                                                            {{- end }}
+
+                                                                            {{- $configurationName := index $configuration.Fields "ServiceConfiguration.Name" -}}
+                                                                            {{- $serviceName := index $configuration.Fields "Service.Name" -}}
+                                                                            {{ if $configurationName }}
+                                                                                "name": "{{ $configurationName | js}}",
+                                                                            {{- else if $serviceName }}
+                                                                                "name": "{{ $serviceName | js}}",
+                                                                            {{- end -}}
+
+                                                                            {{- $configurationDescription := index $configuration.Fields "ServiceConfiguration.Description" -}}
+                                                                            {{- $serviceDescription := index $configuration.Fields "Service.Description" -}}
+                                                                            {{ if $configurationDescription }}
+                                                                                "description": "{{ $configurationDescription | js }}",
+                                                                            {{- else if $serviceDescription }}
+                                                                                "description": "{{ $serviceDescription | js }}",
+                                                                            {{- end -}}
+
+                                                                            {{- $configurationLink := index $configuration.Fields "ServiceConfiguration.Link" -}}
+                                                                            {{- $serviceLink := index $configuration.Fields "Service.Link" -}}
+                                                                            {{ if $configurationLink }}
+                                                                                "link": "{{ $configurationLink | js }}",
+                                                                            {{- else if $serviceLink }}
+                                                                                "link": "{{ $serviceLink | js }}",
+                                                                            {{- end -}}
+
+                                                                            {{- $configurationImgSrc := index $configuration.Fields "ServiceConfiguration.ImgSrc" -}}
+                                                                            {{- $servceImgSrc := index $configuration.Fields "Service.ImgSrc" -}}
+                                                                            {{ if $configurationImgSrc }}
+                                                                                "imgSrc": "{{ $configurationImgSrc | js }}",
+                                                                            {{- else if $servceImgSrc }}
+                                                                                "imgSrc": "{{ $servceImgSrc | js }}",
+                                                                            {{- end }}
+                                                                            "ID": "{{$configuration.ID | js}}"
+                                                                            }
+                                                                        {{- end }}
+                                                                    {{- end -}}
+                                                                {{- end }}
+                                                                ]
+
+                                                                }
+                                                            {{- end }}
+                                                        {{- end }}
+                                                    {{- end }}
+
+
                                                     ]
 
                                                     }

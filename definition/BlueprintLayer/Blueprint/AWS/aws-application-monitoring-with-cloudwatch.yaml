@@ -8,5 +8,7 @@ Definitions:
       ImgSrc: "https://d1.awsstatic.com/Solutions/Solutions%20Category%20Template%20Draft/Solution%20Architecture%20Diagrams/amazon-cloudwatch-monitoring-framework-architecture-diagram.b98e23c3c266e5a98bfdeb664c35a6cf715d7d91.png"
     References: [
       { Class: "ServiceConfiguration", ID: "aws-lambda-default", Relationship: "COMPOSED_OF" },
-      { Class: "BestPractice", ID: "OPS04-BP01", Relationship: "ADHERES_TO"}
+      { Class: "BestPractice", ID: "OPS04-BP01", Relationship: "ADHERES_TO"},
+      { Class: "BlueprintType", ID: "reference-architecture", Relationship: "TYPE_OF" },
+      { Class: "BlueprintType", ID: "implementation", Relationship: "TYPE_OF" },
     ]
