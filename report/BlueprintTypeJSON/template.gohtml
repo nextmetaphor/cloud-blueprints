@@ -1,0 +1,14 @@
+[
+{{- $firstBlueprintType := true -}}
+{{- range $blueprintType := . }}
+    {{- if $firstBlueprintType -}}
+        {{- $firstBlueprintType = false -}}
+        {
+    {{- else -}}
+        ,{
+    {{- end }}
+    "ID": "{{$blueprintType.ID | js}}",
+    "name": "{{index $blueprintType.Fields "BlueprintType.Name" | js }}",
+    "description": "{{index $blueprintType.Fields "BlueprintType.Description" | js }}"}
+{{- end }}
+]

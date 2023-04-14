@@ -1,0 +1,4 @@
+SectionClass:
+  Class: BlueprintType
+  Fields: [ ID, Name, Description, Order ]
+  OrderFields: [ Order, Name ]

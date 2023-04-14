@@ -13,6 +13,8 @@ pages:
     - cp report/BlueprintByCategoryJSON/document.json public/BlueprintByCategoryJSON.json
     - yaml-graph report --fields report/BlueprintByFrameworkJSON/fields.yaml --template report/BlueprintByFrameworkJSON/template.gohtml > report/BlueprintByFrameworkJSON/document.json
     - cp report/BlueprintByFrameworkJSON/document.json public/BlueprintByFrameworkJSON.json
+    - yaml-graph report --fields report/BlueprintTypeJSON/fields.yaml --template report/BlueprintTypeJSON/template.gohtml > report/BlueprintTypeJSON/document.json
+    - cp report/BlueprintTypeJSON/document.json public/BlueprintTypeJSON.json
 
   artifacts:
     paths:
