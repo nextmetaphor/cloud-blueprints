@@ -1,0 +1,13 @@
+Class: "Blueprint"
+Definitions:
+  aws-amazonmusic-amplify-appsync-case-study:
+    Fields:
+      Name: "Amazon Music Unifies Music Queuing at Scale Using AWS AppSync and AWS Amplify"
+      Description: "Amazon Music used AWS AppSync and AWS Amplify to develop a centralized cloud-queuing solution that scales efficiently to support customer growth and facilitates new feature development and innovation."
+      Link: "https://aws.amazon.com/solutions/case-studies/amazonmusic-amplify-appsync-case-study/"
+      ImgSrc: "https://d1.awsstatic.com/AdobeStock_323471740.bf790c73cda8223614adff47dc52d9aba0656138.jpeg"
+    References: [
+      { Class: "ServiceConfiguration", ID: "aws-amplify-default", Relationship: "COMPOSED_OF" },
+      { Class: "BlueprintType", ID: "case-study", Relationship: "TYPE_OF" },
+      { Class: "BlueprintSubcategory", ID: "macro", Relationship: "BELONGS_TO" },
+    ]

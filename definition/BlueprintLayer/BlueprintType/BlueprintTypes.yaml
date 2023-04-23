@@ -23,3 +23,9 @@ Definitions:
       Name: "Workshop"
       Description: "Workshop"
       Order: "04"
+
+  case-study:
+    Fields:
+      Name: "Case Study"
+      Description: "Case Study"
+      Order: "05"
