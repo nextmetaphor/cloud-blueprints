@@ -4,7 +4,7 @@ Definitions:
     Fields:
       Order: 05
       Name: "Retire"
-      Description: "If an application isn't needed, switch it off!"
+      Description: "If an application is not needed, switch it off!"
 
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
