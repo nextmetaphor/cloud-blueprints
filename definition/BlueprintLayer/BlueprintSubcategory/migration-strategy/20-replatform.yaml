@@ -1,0 +1,16 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  re-platform:
+    Fields:
+      Order: 02
+      Name: "Re-Platform"
+      Description: "Migrate existing assets but optimise by utilising managed services wherever possible."
+
+    References: [
+      { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },
+      { Class: "ServiceConfiguration", ID: "aws-dms-schema-conversion-tool-default", Relationship: "COMPOSED_OF" },
+      { Class: "ServiceConfiguration", ID: "aws-dms-default", Relationship: "COMPOSED_OF" },
+      { Class: "ServiceConfiguration", ID: "aws-s3", Relationship: "COMPOSED_OF" },
+      { Class: "ServiceConfiguration", ID: "aws-network-load-balancer-default", Relationship: "COMPOSED_OF" },
+      { Class: "ServiceConfiguration", ID: "aws-application-load-balancer-default", Relationship: "COMPOSED_OF" },
+    ]

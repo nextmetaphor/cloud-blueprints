@@ -1,10 +1,11 @@
 Class: "BlueprintSubcategory"
 Definitions:
-  re-purchase:
+  retain:
     Fields:
-      Order: 04
-      Name: "Re-Purchase"
-      Description: "Move to a PaaS equivalent service."
+      Order: 06
+      Name: "Retail"
+      Description: "Do nothing!"
+
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
     ]

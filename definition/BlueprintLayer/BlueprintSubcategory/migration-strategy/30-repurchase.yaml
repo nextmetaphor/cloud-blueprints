@@ -1,10 +1,11 @@
 Class: "BlueprintSubcategory"
 Definitions:
-  re-platform:
+  re-purchase:
     Fields:
-      Order: 02
-      Name: "Re-Platform"
-      Description: "Migrate existing assets but utilise managed services wherever possible."
+      Order: 03
+      Name: "Re-Purchase"
+      Description: "Move to a PaaS equivalent service."
+
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
     ]

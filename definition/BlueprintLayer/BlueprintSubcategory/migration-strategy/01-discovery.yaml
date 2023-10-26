@@ -1,0 +1,12 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  migration-discovery:
+    Fields:
+      Order: 01
+      Name: "Discovery"
+      Description: "Application Discovery Tooling"
+
+    References: [
+      { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },
+      { Class: "ServiceConfiguration", ID: "aws-application-discovery-service-default", Relationship: "COMPOSED_OF" },
+    ]

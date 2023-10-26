@@ -1,10 +1,11 @@
 Class: "BlueprintSubcategory"
 Definitions:
-  re-host:
+  re-architect:
     Fields:
-      Order: 01
-      Name: "Re-Host"
-      Description: "Also known as \"Lift and Shift\": move existing resources without change."
+      Order: 04
+      Name: "Re-Architect"
+      Description: "Rebuild architecture in a cloud-native manner."
+
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
     ]

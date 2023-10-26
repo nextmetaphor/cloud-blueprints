@@ -1,10 +1,11 @@
 Class: "BlueprintSubcategory"
 Definitions:
-  re-architect:
+  retire:
     Fields:
-      Order: 03
-      Name: "Re-Architect"
-      Description: "Rebuild architecture in a cloud-native manner."
+      Order: 05
+      Name: "Retire"
+      Description: "If an application isn't needed, switch it off!"
+
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
     ]

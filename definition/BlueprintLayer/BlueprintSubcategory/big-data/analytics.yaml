@@ -1,0 +1,10 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  analytics:
+    Fields:
+      Order: 01
+      Name: "Analytics"
+      Description: "Big Data query and analytics"
+    References: [
+      { Class: "BlueprintCategory", ID: "big-data", Relationship: "GROUPED_BY" }
+    ]

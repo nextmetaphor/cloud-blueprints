@@ -1,0 +1,12 @@
+Class: "BlueprintSubcategory"
+Definitions:
+  migration-management:
+    Fields:
+      Order: 00
+      Name: "Management"
+      Description: "Management of Migration Activities"
+
+    References: [
+      { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },
+      { Class: "ServiceConfiguration", ID: "aws-migration-hub-default", Relationship: "COMPOSED_OF" },
+    ]

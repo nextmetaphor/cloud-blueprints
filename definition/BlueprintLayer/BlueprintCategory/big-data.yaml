@@ -1,0 +1,6 @@
+Class: "BlueprintCategory"
+Definitions:
+  big-data:
+    Fields:
+      Name: "Big Data"
+      Description: "Big Data processing"
