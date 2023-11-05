@@ -14,7 +14,7 @@ Definitions:
       BELONGS_TO:
         Class: "Blueprint"
         Definitions:
-          chaos-engineering:
+          aws-migration-hub-blueprint:
             Fields:
               Name: "AWS Migration Hub"
               Description: "Plan & Track Enterprise Application Migration"

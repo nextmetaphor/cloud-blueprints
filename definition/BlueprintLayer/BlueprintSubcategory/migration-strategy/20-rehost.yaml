@@ -9,3 +9,18 @@ Definitions:
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },
     ]
+
+    SubDefinitions:
+      BELONGS_TO:
+        Class: "Blueprint"
+        Definitions:
+          aws-application-migration-service-blueprint:
+            Fields:
+              Name: "AWS Application Migration Service"
+              Description: "How to Use the New AWS Application Migration Service for Lift-and-Shift Migrations"
+              Link: "https://aws.amazon.com/blogs/aws/how-to-use-the-new-aws-application-migration-service-for-lift-and-shift-migrations/"
+              ImgSrc: "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2021/04/15/2021-aws-mgn-how-it-works.jpg"
+            References: [
+              { Class: "ServiceConfiguration", ID: "aws-application-migration-service-default", Relationship: "COMPOSED_OF" },
+            ]
+
