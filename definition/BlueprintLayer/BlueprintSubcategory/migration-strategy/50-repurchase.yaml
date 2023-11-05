@@ -2,7 +2,7 @@ Class: "BlueprintSubcategory"
 Definitions:
   re-purchase:
     Fields:
-      Order: 40
+      Order: 50
       Name: "Re-Purchase"
       Description: "Move to a PaaS equivalent service."
 

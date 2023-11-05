@@ -2,9 +2,10 @@ Class: "BlueprintSubcategory"
 Definitions:
   re-architect:
     Fields:
-      Order: 50
+      Order: 40
       Name: "Re-Architect"
-      Description: "Rebuild architecture in a cloud-native manner."
+    FileFields:
+      Description: { Path: "rearchitect.md" }
 
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
