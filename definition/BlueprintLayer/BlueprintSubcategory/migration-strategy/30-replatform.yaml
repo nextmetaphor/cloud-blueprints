@@ -4,13 +4,26 @@ Definitions:
     Fields:
       Order: 30
       Name: "Re-Platform"
-      Description: "Migrate existing assets but optimise by utilising managed services wherever possible."
+    FileFields:
+      Description: { Path: "replatform.md" }
 
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },
-      { Class: "ServiceConfiguration", ID: "aws-dms-schema-conversion-tool-default", Relationship: "COMPOSED_OF" },
-      { Class: "ServiceConfiguration", ID: "aws-dms-default", Relationship: "COMPOSED_OF" },
-      { Class: "ServiceConfiguration", ID: "aws-s3", Relationship: "COMPOSED_OF" },
-      { Class: "ServiceConfiguration", ID: "aws-network-load-balancer-default", Relationship: "COMPOSED_OF" },
-      { Class: "ServiceConfiguration", ID: "aws-application-load-balancer-default", Relationship: "COMPOSED_OF" },
     ]
+
+    SubDefinitions:
+      BELONGS_TO:
+        Class: "Blueprint"
+        Definitions:
+          aws-replatform-java-web-applications-blueprint:
+            Fields:
+              Name: "Re-platforming Java web applications on AWS"
+              Description: "AWS blog detailing how to re-platform and modernize Java web applications on AWS"
+              Link: "https://aws.amazon.com/blogs/compute/re-platform-java-web-applications-on-aws/"
+              ImgSrc: "https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2021/12/09/Image1.png"
+            References: [
+              { Class: "ServiceConfiguration", ID: "aws-s3-hot", Relationship: "COMPOSED_OF" },
+              { Class: "ServiceConfiguration", ID: "aws-ec2-shared-host", Relationship: "COMPOSED_OF" },
+              { Class: "ServiceConfiguration", ID: "aws-route53-default", Relationship: "COMPOSED_OF" },
+              { Class: "ServiceConfiguration", ID: "aws-rds-default", Relationship: "COMPOSED_OF" },
+            ]

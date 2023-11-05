@@ -4,8 +4,23 @@ Definitions:
     Fields:
       Order: 20
       Name: "Re-Locate"
-      Description: "TODO"
+    FileFields:
+      Description: { Path: "relocate.md" }
 
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },
     ]
+
+    SubDefinitions:
+      BELONGS_TO:
+        Class: "Blueprint"
+        Definitions:
+          aws-vmware-blueprint:
+            Fields:
+              Name: "AWS Application Migration Service"
+              Description: "AWS blog detailing how to use VMWare on Cloud"
+              Link: "https://aws.amazon.com/blogs/aws/vmware-cloud-on-aws-now-available/"
+              ImgSrc: "https://media.amazonwebservices.com/blog/2017/vmware_aws_wide_slide_2.png"
+            References: [
+              { Class: "ServiceConfiguration", ID: "aws-vmware-default", Relationship: "COMPOSED_OF" },
+            ]
