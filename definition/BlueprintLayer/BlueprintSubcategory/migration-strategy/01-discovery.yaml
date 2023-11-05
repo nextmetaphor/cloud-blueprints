@@ -7,7 +7,7 @@ Definitions:
       Description: "Application Discovery Tooling"
 
     References: [
-      { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },
+      { Class: "BlueprintCategory", ID: "migration-management", Relationship: "GROUPED_BY" },
       { Class: "ServiceConfiguration", ID: "aws-application-discovery-service-default", Relationship: "COMPOSED_OF" },
     ]
 

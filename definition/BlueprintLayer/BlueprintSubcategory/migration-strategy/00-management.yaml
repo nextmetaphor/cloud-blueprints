@@ -7,7 +7,7 @@ Definitions:
       Description: "Management of Migration Activities"
 
     References: [
-      { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },
+      { Class: "BlueprintCategory", ID: "migration-management", Relationship: "GROUPED_BY" },
     ]
 
     SubDefinitions:

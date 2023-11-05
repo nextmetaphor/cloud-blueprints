@@ -2,11 +2,11 @@ Also known as "Lift and Shift": essentially move existing resources without chan
 
 This strategy is useful to expedite cloud migrations at a low cost.
 
-#### Advantages
+**Advantages**
 * Straightforward to achieve complete migration to cloud
 * Benefits from cloud resilience
 * Minimal risk and disruption
 
-#### Disadvantages
+**Disadvantages**
 * Maintains existing technical debt
 * Does not benefit from cloud-native capabilities
