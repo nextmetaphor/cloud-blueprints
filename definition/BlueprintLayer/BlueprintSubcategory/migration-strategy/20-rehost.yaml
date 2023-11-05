@@ -2,11 +2,10 @@ Class: "BlueprintSubcategory"
 Definitions:
   rehost:
     Fields:
-      Order: 01
-      Name: "Rehost"
+      Order: 20
+      Name: "Re-Host"
       Description: "Also known as \"Lift and Shift\": move existing resources without change."
 
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },
-      { Class: "ServiceConfiguration", ID: "aws-application-migration-service-default", Relationship: "COMPOSED_OF" },
     ]

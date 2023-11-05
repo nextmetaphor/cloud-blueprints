@@ -8,5 +8,21 @@ Definitions:
 
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },
-      { Class: "ServiceConfiguration", ID: "aws-migration-hub-default", Relationship: "COMPOSED_OF" },
     ]
+
+    SubDefinitions:
+      BELONGS_TO:
+        Class: "Blueprint"
+        Definitions:
+          chaos-engineering:
+            Fields:
+              Name: "AWS Migration Hub"
+              Description: "Plan & Track Enterprise Application Migration"
+              Link: "https://aws.amazon.com/blogs/aws/aws-migration-hub-plan-track-enterprise-application-migration/"
+              ImgSrc: "https://media.amazonwebservices.com/blog/2017/mh_main_2.png"
+            References: [
+              { Class: "ServiceConfiguration", ID: "aws-migration-hub-default", Relationship: "COMPOSED_OF" },
+            ]
+
+
+

@@ -2,7 +2,7 @@ Class: "BlueprintSubcategory"
 Definitions:
   retire:
     Fields:
-      Order: 05
+      Order: 60
       Name: "Retire"
       Description: "If an application is not needed, switch it off!"
 

@@ -2,7 +2,7 @@ Class: "BlueprintSubcategory"
 Definitions:
   re-platform:
     Fields:
-      Order: 02
+      Order: 30
       Name: "Re-Platform"
       Description: "Migrate existing assets but optimise by utilising managed services wherever possible."
 

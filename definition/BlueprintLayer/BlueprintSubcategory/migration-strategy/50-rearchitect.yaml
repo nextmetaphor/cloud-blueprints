@@ -1,10 +1,10 @@
 Class: "BlueprintSubcategory"
 Definitions:
-  retain:
+  re-architect:
     Fields:
-      Order: 06
-      Name: "Retail"
-      Description: "Do nothing!"
+      Order: 50
+      Name: "Re-Architect"
+      Description: "Rebuild architecture in a cloud-native manner."
 
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" }
