@@ -17,8 +17,8 @@ Definitions:
         Definitions:
           aws-vmware-blueprint:
             Fields:
-              Name: "AWS Application Migration Service"
-              Description: "AWS blog detailing how to use VMWare on Cloud"
+              Name: "Using VMWare Cloud on AWS"
+              Description: "AWS blog detailing how to use VMWare Cloud on AWS"
               Link: "https://aws.amazon.com/blogs/aws/vmware-cloud-on-aws-now-available/"
               ImgSrc: "https://media.amazonwebservices.com/blog/2017/vmware_aws_wide_slide_2.png"
             References: [
