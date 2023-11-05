@@ -2,9 +2,12 @@ Class: "BlueprintSubcategory"
 Definitions:
   rehost:
     Fields:
-      Order: 20
+      Order: 10
       Name: "Re-Host"
-      Description: "Also known as \"Lift and Shift\": move existing resources without change."
+
+    FileFields:
+      Description: { Path: "rehost.md" }
+
 
     References: [
       { Class: "BlueprintCategory", ID: "migration-strategy", Relationship: "GROUPED_BY" },

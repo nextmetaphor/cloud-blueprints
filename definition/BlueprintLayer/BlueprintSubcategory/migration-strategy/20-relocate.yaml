@@ -2,7 +2,7 @@ Class: "BlueprintSubcategory"
 Definitions:
   relocate:
     Fields:
-      Order: 10
+      Order: 20
       Name: "Re-Locate"
       Description: "TODO"
 
