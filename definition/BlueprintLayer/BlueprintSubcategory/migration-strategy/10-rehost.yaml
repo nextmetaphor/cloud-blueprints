@@ -24,5 +24,6 @@ Definitions:
               ImgSrc: "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2021/04/15/2021-aws-mgn-how-it-works.jpg"
             References: [
               { Class: "ServiceConfiguration", ID: "aws-application-migration-service-default", Relationship: "COMPOSED_OF" },
+              { Class: "BlueprintType", ID: "blog", Relationship: "TYPE_OF" },
             ]
 

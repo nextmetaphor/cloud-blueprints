@@ -23,4 +23,5 @@ Definitions:
               ImgSrc: "https://media.amazonwebservices.com/blog/2017/vmware_aws_wide_slide_2.png"
             References: [
               { Class: "ServiceConfiguration", ID: "aws-vmware-default", Relationship: "COMPOSED_OF" },
+              { Class: "BlueprintType", ID: "blog", Relationship: "TYPE_OF" },
             ]
